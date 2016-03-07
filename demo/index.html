@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flickr</title>
+  <script src="/lib/angular.js"></script>
+  <script src="/js/flickr.js"></script>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+</head>
+<body ng-app="app" ng-controller="flickrController">
+  <form>
+    <input type="text" ng-model="tag" />
+    <button ng-click="get()">Search</button>
+    <ul>
+      <li ng-repeat="item in feed.items">
+        <a href="{{item.link}}">
+          <img src="{{item.media.m}}" />
+        </a>
+      </li>
+    </ul>
+  </form>
+</body>
+</html>
